@@ -217,7 +217,7 @@ export default function HomePage() {
           </div>
           {/* Two-row scroll track */}
           <div className="lg:flex-1 w-full min-w-0">
-            <div className="no-scrollbar grid grid-flow-col grid-rows-2 lg:grid-rows-1 gap-4 lg:gap-5 overflow-x-auto pb-2" style={{ gridAutoColumns: "minmax(220px, 1fr)", scrollSnapType: "x mandatory" }}>
+            <div className="no-scrollbar grid grid-flow-col grid-rows-2 lg:grid-rows-1 gap-4 lg:gap-5 overflow-x-auto pb-2 [--nc:minmax(230px,1fr)] lg:[--nc:minmax(380px,1fr)]" style={{ gridAutoColumns: "var(--nc)", scrollSnapType: "x mandatory" }}>
               {news.slice(0, 8).map((n) => (
                 <Link key={n.slug} href={`/news/${n.slug}`} className="group flex flex-col overflow-hidden border border-white/5 hover:border-[#C9A84C]/25 transition-colors duration-300 no-underline text-[#F0F0F2]" style={{ scrollSnapAlign: "start" }}>
                   <div className="aspect-video overflow-hidden relative" style={{ background: "linear-gradient(135deg, #111114, #0E0E10)" }}>
