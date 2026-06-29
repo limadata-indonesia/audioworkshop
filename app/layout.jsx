@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import Nav from "../components/Nav";
 import Breadcrumbs from "../components/Breadcrumbs";
 import Footer from "../components/Footer";
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <Breadcrumbs />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
