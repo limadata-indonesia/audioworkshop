@@ -31,10 +31,22 @@ export default function Page({ params }) {
 
         <h1 className="text-3xl md:text-4xl font-black text-[#F0F0F2] mb-6 leading-tight">{article.title}</h1>
 
+        {article.image && (
+          <div className="aspect-video rounded-xl overflow-hidden mb-8 bg-[#131316] border border-[#1E1E26]">
+            <img src={article.image} alt={article.title} className="w-full h-full object-cover" />
+          </div>
+        )}
+
         <div className="prose text-[#8A8A96] leading-relaxed space-y-4">
           {article.body?.map((block, i) => {
-            if (block.type === "h2") return <h2 key={i} className="text-[#F0F0F2] text-2xl font-black mt-8 mb-3">{block.text}</h2>;
-            if (block.type === "h3") return <h3 key={i} className="text-[#F0F0F2] text-xl font-bold mt-6 mb-2">{block.text}</h3>;
+            if (block.type === "h") return <h2 key={i} className="text-[#F0F0F2] text-2xl font-black mt-8 mb-3">{block.text}</h2>;
+            if (block.type === "li")
+              return (
+                <div key={i} className="flex gap-3">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#C9A84C] flex-shrink-0" />
+                  <p className="flex-1">{block.text}</p>
+                </div>
+              );
             return <p key={i}>{block.text}</p>;
           })}
         </div>

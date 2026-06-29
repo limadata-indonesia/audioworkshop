@@ -32,8 +32,12 @@ export default function Page({ params }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Image */}
           <div>
-            <div className="aspect-square bg-[#131316] border border-[#1E1E26] rounded-xl overflow-hidden mb-4">
-              <div className="w-full h-full flex items-center justify-center text-[#1E1E26] text-6xl">◈</div>
+            <div className="aspect-square bg-white border border-[#1E1E26] rounded-xl overflow-hidden mb-4">
+              {product.image ? (
+                <img src={product.image} alt={product.name} className="w-full h-full object-contain p-6" />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-[#131316] text-[#1E1E26] text-6xl">◈</div>
+              )}
             </div>
           </div>
 
@@ -97,8 +101,12 @@ export default function Page({ params }) {
                   href={`/products/${p.slug}`}
                   className="group bg-[#131316] border border-[#1E1E26] hover:border-[#C9A84C]/40 rounded-lg overflow-hidden transition-all hover:-translate-y-1"
                 >
-                  <div className="aspect-square bg-[#1E1E26] overflow-hidden">
-                    <div className="w-full h-full flex items-center justify-center text-[#1E1E26]">◈</div>
+                  <div className="aspect-square bg-white overflow-hidden">
+                    {p.image ? (
+                      <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-[#1E1E26] text-[#1E1E26]">◈</div>
+                    )}
                   </div>
                   <div className="p-3">
                     <span className="text-[#C9A84C] text-xs font-bold">{getBrandName(p.brandSlug)}</span>

@@ -25,7 +25,7 @@ export default function Page({ params }) {
 
         <div className="bg-[#131316] border border-[#1E1E26] rounded-xl overflow-hidden mb-16">
           <div className="p-8 md:p-12 flex flex-col md:flex-row items-start gap-8">
-            <h1 className="text-4xl font-black text-[#F0F0F2]">{brand.name}</h1>
+            <h1 className="text-3xl md:text-4xl font-black text-[#F0F0F2]">{brand.name}</h1>
             <div>
               {brand.country && <span className="text-[#8A8A96] text-xs border border-[#1E1E26] px-2 py-0.5 rounded-full mb-3 inline-block">{brand.country}</span>}
               {brand.tagline && <h2 className="text-[#F0F0F2] text-2xl font-bold mb-3">{brand.tagline}</h2>}
@@ -52,8 +52,12 @@ export default function Page({ params }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {items.map((p) => (
               <Link key={p.slug} href={`/products/${p.slug}`} className="group bg-[#131316] border border-[#1E1E26] hover:border-[#C9A84C]/40 rounded-lg overflow-hidden transition-all hover:-translate-y-1">
-                <div className="aspect-square bg-[#1E1E26] overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-[#1E1E26] text-4xl">◈</div>
+                <div className="aspect-square bg-white overflow-hidden">
+                  {p.image ? (
+                    <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-[#1E1E26] text-[#3A3A46] text-4xl">◈</div>
+                  )}
                 </div>
                 <div className="p-4">
                   <span className="text-[#8A8A96] text-xs capitalize">{catLabel(p.category)}</span>

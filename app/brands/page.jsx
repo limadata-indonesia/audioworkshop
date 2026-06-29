@@ -14,7 +14,7 @@ export default function Page() {
             <div className="w-8 h-px bg-[#C9A84C]" />
             <span className="text-[#C9A84C] text-xs font-bold tracking-[0.2em] uppercase">Our Brands</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-black text-[#F0F0F2] mb-4">World-Class Partners</h1>
+          <h1 className="text-3xl md:text-4xl font-black text-[#F0F0F2] mb-4">World-Class Partners</h1>
           <p className="text-[#8A8A96] text-lg max-w-2xl">We are the authorized distributor for the world's most respected car audio brands, bringing genuine products and full manufacturer support to Indonesia.</p>
         </div>
       </section>

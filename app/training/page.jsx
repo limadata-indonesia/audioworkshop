@@ -1,83 +1,133 @@
 import Link from "next/link";
 
-const programs = [
-  {
-    level: "Level 1",
-    title: "Foundation",
-    desc: "Car audio fundamentals, safety procedures, basic installation techniques, and component identification.",
-    topics: ["System components overview", "Wiring fundamentals", "Basic installation", "Safety procedures"],
-    duration: "2 Days",
-  },
-  {
-    level: "Level 2",
-    title: "Advanced Installation",
-    desc: "Advanced wiring, custom fabrication, amplifier tuning, and professional finishing techniques.",
-    topics: ["Advanced wiring", "Custom fabrication", "Amplifier configuration", "Acoustic principles"],
-    duration: "3 Days",
-  },
-  {
-    level: "Level 3",
-    title: "Master Technician",
-    desc: "Full system design, DSP programming, acoustic measurement, and premium brand certification.",
-    topics: ["DSP programming", "RTA measurement", "System design", "Brand certification"],
-    duration: "5 Days",
-  },
+export const metadata = {
+  title: "Training Center — Audio Workshop Indonesia",
+  description:
+    "Audioworkshop Installer Institute — Indonesia's comprehensive car audio training center since 2001, with international certification.",
+};
+
+const topics = [
+  "Dasar elektronika",
+  "Crossover",
+  "Instalasi sistem audio",
+  "Kabel dan manajemen wiring",
+  "Tuning audio / setting",
+  "Pembuatan box speaker",
+  "Troubleshooting gangguan audio mobil (noise)",
+  "Fiberglass",
 ];
 
-export const metadata = { title: "Training — Audio Workshop Indonesia" };
+const achievements = [
+  "Menjadi pusat pelatihan yang dipercaya sebagai rujukan oleh berbagai brand audio mobil.",
+  "Berhasil mencetak installer profesional yang terbukti berprestasi, dengan meraih kemenangan dalam berbagai kompetisi audio mobil di event besar dan bergengsi, baik di tingkat nasional maupun internasional.",
+  "Menjadi salah satu institusi pelatihan audio mobil yang direkomendasikan oleh organisasi kompetisi audio seperti EMMA dan CAN di kawasan Asia.",
+  "Telah meluluskan lebih dari 400 alumni yang tersebar di seluruh Indonesia, di mana sebagian di antaranya telah sukses membangun bisnis sendiri melalui toko audio maupun workshop instalasi dan modifikasi audio mobil.",
+];
 
-export default function TrainingPage() {
+const grid = ["tc-g1", "tc-g2", "tc-g3", "tc-g4", "tc-g5", "tc-g6", "tc-g7", "tc-g8", "tc-g9"];
+
+const Check = () => (
+  <svg className="w-4 h-4 text-[#C9A84C] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 6L9 17l-5-5" />
+  </svg>
+);
+
+export default function Page() {
   return (
     <>
-      <section className="pt-32 pb-16 max-w-7xl mx-auto px-6">
-        <p className="text-[#C9A84C] text-xs font-bold tracking-widest uppercase mb-2">Training</p>
-        <h1 className="text-4xl md:text-5xl font-black text-[#F0F0F2] mb-4">Professional Training Program</h1>
-        <p className="text-[#8A8A96] text-lg max-w-2xl">Elevate your skills with our certified car audio training programs. Designed for installers, dealers, and enthusiasts who demand excellence.</p>
-      </section>
-
-      <section className="max-w-7xl mx-auto px-6 pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {programs.map((prog) => (
-            <div key={prog.level} className="bg-[#131316] border border-[#1E1E26] rounded-xl p-8 flex flex-col">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-[#C9A84C] text-xs font-bold tracking-widest uppercase">{prog.level}</span>
-                <span className="text-[#8A8A96] text-xs border border-[#1E1E26] px-2 py-0.5 rounded-full">{prog.duration}</span>
-              </div>
-              <h2 className="text-[#F0F0F2] text-2xl font-black mb-3">{prog.title}</h2>
-              <p className="text-[#8A8A96] text-sm leading-relaxed mb-6 flex-1">{prog.desc}</p>
-              <ul className="space-y-2 mb-8">
-                {prog.topics.map((t) => (
-                  <li key={t} className="flex items-center gap-2 text-sm text-[#8A8A96]">
-                    <span className="w-1.5 h-1.5 bg-[#C9A84C] rounded-full flex-shrink-0" />
-                    {t}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/contact" className="mt-auto bg-[#C9A84C]/10 hover:bg-[#C9A84C] border border-[#C9A84C]/30 hover:border-[#C9A84C] text-[#C9A84C] hover:text-white font-bold px-6 py-3 rounded text-sm tracking-wider uppercase text-center transition-all">
-                Register Interest
-              </Link>
+      {/* Top gallery */}
+      <section className="pt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+          {["tc-top1", "tc-top2", "tc-top3"].map((n) => (
+            <div key={n} className="aspect-[4/3] overflow-hidden bg-[#131316]">
+              <img src={`/pages/${n}.jpg`} alt="Training session" loading="lazy" className="w-full h-full object-cover" />
             </div>
           ))}
         </div>
+      </section>
 
-        <div className="bg-[#131316] border border-[#1E1E26] rounded-xl p-8 md:p-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-black text-[#F0F0F2] mb-4">Brand-Specific Training</h2>
-              <p className="text-[#8A8A96] leading-relaxed mb-6">We offer manufacturer-certified training for all major brands we distribute. Get factory-trained and certified to install and tune premium systems.</p>
-              <div className="flex flex-wrap gap-2">
-                {["Focal", "Alpine", "Audison", "Hertz", "JL Audio"].map((b) => (
-                  <span key={b} className="border border-[#1E1E26] text-[#8A8A96] text-xs px-3 py-1 rounded-full">{b}</span>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              <Link href="/contact" className="bg-[#C9A84C] hover:bg-[#B8963E] text-white font-bold px-8 py-4 rounded text-sm tracking-wider uppercase text-center transition-colors">
-                Inquire About Training
-              </Link>
-              <p className="text-[#8A8A96] text-xs text-center">Training schedules are announced quarterly. Contact us to be notified.</p>
-            </div>
+      {/* Heading */}
+      <section className="max-w-6xl mx-auto px-6 pt-14 pb-2">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-10 h-px bg-[#C9A84C]" />
+          <span className="text-[#C9A84C] text-xs font-bold tracking-[0.2em] uppercase">Supporting Business</span>
+        </div>
+        <h1 className="text-3xl md:text-4xl font-black text-[#F0F0F2] tracking-tight">Audioworkshop Training Center</h1>
+      </section>
+
+      {/* Intro + topics / feature image */}
+      <section className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div className="space-y-5">
+          <p className="text-[#8A8A96] leading-relaxed">
+            Audioworkshop memulai langkahnya dengan membuka fasilitas pelatihan installer pada tahun 2001 dengan nama Audioworkshop Installer Institute. Hingga saat ini, Audioworkshop Installer Institute dikenal sebagai salah satu pusat pelatihan audio mobil dengan materi pembelajaran yang lengkap dan komprehensif.
+          </p>
+          <p className="text-[#8A8A96] leading-relaxed">
+            Materi pelatihan yang disusun mencakup seluruh aspek penting untuk memahami sistem audio mobil secara menyeluruh, antara lain:
+          </p>
+          <ul className="grid sm:grid-cols-2 gap-3">
+            {topics.map((t) => (
+              <li key={t} className="flex gap-3 bg-[#131316] border border-[#1E1E26] rounded-lg p-3.5 hover:border-[#C9A84C]/30 transition-colors">
+                <Check />
+                <span className="text-[#A8A8B2] text-sm leading-snug">{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="space-y-5">
+          <div className="overflow-hidden rounded-xl border border-[#1E1E26] bg-[#131316]">
+            <img src="/pages/tc-lab.jpg" alt="Audioworkshop training lab" loading="lazy" className="w-full h-auto" />
           </div>
+          <p className="text-[#8A8A96] leading-relaxed">
+            Tidak hanya berfokus di dalam negeri, Audioworkshop Installer Institute juga mengembangkan jaringan internasional sejak tahun 2002 dengan menjalin kerja sama pelatihan bersama ETTA Training Institute Japan.
+          </p>
+        </div>
+      </section>
+
+      {/* Achievements + feature image */}
+      <section className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div className="order-2 lg:order-1 overflow-hidden rounded-xl border border-[#1E1E26] bg-[#131316]">
+          <img src="/pages/tc-training.jpg" alt="Training graduates" loading="lazy" className="w-full h-auto" />
+        </div>
+        <div className="order-1 lg:order-2 space-y-5">
+          <h2 className="text-2xl font-black text-[#F0F0F2]">Pencapaian Kami</h2>
+          <p className="text-[#8A8A96] leading-relaxed">
+            Beberapa pencapaian yang telah diraih oleh Audioworkshop Installer Institute antara lain:
+          </p>
+          <ul className="space-y-3">
+            {achievements.map((a, i) => (
+              <li key={i} className="flex gap-3">
+                <Check />
+                <span className="text-[#8A8A96] text-sm leading-relaxed">{a}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Photo grid */}
+      <section className="max-w-6xl mx-auto px-6 pt-6 pb-20">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-8 h-px bg-[#C9A84C]" />
+          <span className="text-[#C9A84C] text-xs font-bold tracking-[0.2em] uppercase">Training Moments</span>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {grid.map((n) => (
+            <div key={n} className="aspect-[4/3] overflow-hidden rounded-lg border border-[#1E1E26] bg-[#131316] group">
+              <img src={`/pages/${n}.jpg`} alt="Training" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative overflow-hidden border-t border-white/5">
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 100% at 50% 100%, rgba(201,168,76,0.06), transparent 70%), #0F0F12" }} />
+        <div className="relative max-w-4xl mx-auto px-6 py-20 text-center">
+          <h2 className="text-3xl font-black text-[#F0F0F2] mb-3">Join Our Next Training Program</h2>
+          <p className="text-[#8A8A96] mb-8">Training schedules are announced quarterly. Contact us to be notified and reserve your place.</p>
+          <Link href="/contact" className="inline-block bg-[#C9A84C] hover:bg-[#B8963E] text-[#0C0C0E] font-bold px-10 py-4 text-sm tracking-widest uppercase transition-colors">
+            Inquire About Training
+          </Link>
         </div>
       </section>
     </>

@@ -1,83 +1,103 @@
-const stats = [
-  { value: "2009", label: "Founded" },
-  { value: "20+", label: "Premium Brands" },
-  { value: "5000+", label: "Installations" },
-  { value: "50+", label: "Dealers Nationwide" },
-];
+import { aboutCompany, aboutVisiMisi, aboutIntro, aboutCommitment, aboutSejarah } from "@/lib/about";
+import { team } from "@/lib/team";
 
-const values = [
-  { title: "Authenticity", desc: "Every product we sell is 100% genuine, sourced directly from manufacturers or authorized distributors." },
-  { title: "Excellence", desc: "We settle for nothing less than perfection in every installation, from wire routing to acoustic tuning." },
-  { title: "Partnership", desc: "We build lasting relationships with our customers, brands, and dealers — not one-time transactions." },
-];
+export const metadata = { title: "About Us — Audio Workshop Indonesia" };
 
-export const metadata = { title: "About — Audio Workshop Indonesia" };
+const initials = (name) =>
+  name.replace(/[.,]/g, "").split(/\s+/).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
 
-export default function AboutPage() {
+export default function Page() {
   return (
     <>
-      <section className="relative overflow-hidden pt-32 pb-24" style={{ background: "#0C0C0E" }}>
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 50% 80% at 0% 0%, rgba(201,168,76,0.05), transparent 60%)" }} />
-        <div className="absolute top-0 right-0 w-96 h-96 opacity-30" style={{ background: "radial-gradient(circle, rgba(201,168,76,0.06), transparent 70%)" }} />
-        <div className="max-w-7xl mx-auto px-6 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-[#C9A84C] text-xs font-bold tracking-widest uppercase mb-3">About Us</p>
-              <h1 className="text-4xl md:text-5xl font-black text-[#F0F0F2] mb-6 leading-tight">
-                Indonesia's Premium<br /><span className="text-[#C9A84C]">Car Audio</span> Authority
-              </h1>
-              <div className="text-[#8A8A96] leading-relaxed space-y-4">
-                <p>Audio Workshop Indonesia is the nation's leading authorized distributor and installer of premium car audio systems. Since our founding, we have been dedicated to bringing the world's finest audio technology to Indonesian car enthusiasts.</p>
-                <p>We represent the most respected names in car audio — Focal, Alpine, Audison, Hertz, JL Audio, and more — providing genuine products with full manufacturer support and warranty.</p>
-                <p>Our team of certified technicians brings decades of combined experience to every installation, treating each vehicle with the precision and care it deserves.</p>
-              </div>
-            </div>
+      {/* Our Company — full-bleed image gradienting into the dark + text */}
+      <section className="relative w-full overflow-hidden pt-16" style={{ background: "#0C0C0E" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+          {/* Image */}
+          <div className="relative min-h-[340px] lg:min-h-[600px]">
+            <img src="/pages/about-company.webp" alt="PT. Audioworkshop team & office" className="absolute inset-0 w-full h-full object-cover" />
+            {/* gradient blend into the dark background (right on desktop, bottom on mobile) */}
+            <div aria-hidden="true" className="absolute inset-0 hidden lg:block" style={{ background: "linear-gradient(to right, transparent 45%, rgba(12,12,14,0.55) 78%, #0C0C0E 100%)" }} />
+            <div aria-hidden="true" className="absolute inset-0 lg:hidden" style={{ background: "linear-gradient(to bottom, transparent 50%, #0C0C0E 100%)" }} />
+            {/* subtle top vignette for depth */}
+            <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to top, transparent 70%, rgba(12,12,14,0.5))" }} />
+          </div>
 
-            <div className="relative">
-              <div className="aspect-[4/3] relative overflow-hidden rounded-xl" style={{ background: "linear-gradient(135deg, #0C0C0E, #131316 50%, #1A1710)" }}>
-                <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 60% 60% at 30% 40%, rgba(201,168,76,0.12), transparent 70%)" }} />
-                <div className="absolute inset-0 opacity-15" style={{ backgroundImage: "linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[#C9A84C]/10 text-9xl font-black tracking-tighter">AW</span>
-                </div>
+          {/* Text */}
+          <div className="relative flex flex-col justify-center px-6 md:px-12 lg:pl-6 lg:pr-20 py-14 lg:py-24">
+            {/* gold glow accent */}
+            <div aria-hidden="true" className="absolute top-1/2 -translate-y-1/2 -left-24 w-80 h-80 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(201,168,76,0.12), transparent 70%)" }} />
+            <div className="relative max-w-xl">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-px bg-[#C9A84C]" />
+                <span className="text-[#C9A84C] text-xs font-bold tracking-[0.25em] uppercase">PT. Audioworkshop</span>
               </div>
-              <div className="absolute -bottom-6 -left-6 p-6 shadow-2xl hidden md:block" style={{ background: "linear-gradient(135deg, #C9A84C, #B8963E)" }}>
-                <div className="text-[#0C0C0E] text-3xl font-black">15+</div>
-                <div className="text-[#0C0C0E]/70 text-sm font-semibold">Years of Excellence</div>
-              </div>
+              <h1 className="text-3xl md:text-4xl font-black text-[#F0F0F2] mb-7 tracking-tight leading-[1.05]">Our Company</h1>
+              {aboutCompany.map((p, i) => (
+                <p key={i} className="text-[#9A9AA6] leading-relaxed mb-4 last:mb-0">{p}</p>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="relative overflow-hidden border-y border-white/5">
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 100% at 50% 100%, rgba(201,168,76,0.05), transparent 70%), #131316" }} />
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, rgba(201,168,76,0.2) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-        <div className="relative max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="text-4xl font-black text-[#C9A84C] mb-1">{s.value}</div>
-              <div className="text-[#8A8A96] text-sm uppercase tracking-wider">{s.label}</div>
-            </div>
+      {/* Visi dan Misi */}
+      <section className="max-w-3xl mx-auto px-6 pb-8 mt-12">
+        <h2 className="text-2xl md:text-3xl font-black text-[#F0F0F2] text-center mb-6">Visi dan Misi</h2>
+        <ul className="space-y-2 mb-6">
+          {aboutVisiMisi.map((v, i) => (
+            <li key={i} className="flex gap-3">
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#C9A84C] flex-shrink-0" />
+              <span className="text-[#8A8A96] leading-relaxed">{v}</span>
+            </li>
+          ))}
+        </ul>
+        <p className="text-[#8A8A96] leading-relaxed mb-4">{aboutIntro}</p>
+        <p className="text-[#8A8A96] leading-relaxed mb-4">Oleh karena itu PT. Audioworkshop berkomitmen untuk:</p>
+        <ol className="space-y-2.5">
+          {aboutCommitment.map((c, i) => (
+            <li key={i} className="flex gap-3">
+              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#C9A84C]/15 text-[#C9A84C] text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
+              <span className="text-[#8A8A96] leading-relaxed">{c}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <div className="max-w-3xl mx-auto px-6"><div className="border-t border-[#1E1E26]" /></div>
+
+      {/* Sejarah */}
+      <section className="max-w-3xl mx-auto px-6 py-10 pb-24">
+        <h2 className="text-2xl md:text-3xl font-black text-[#F0F0F2] text-center mb-8">Sejarah</h2>
+        <div className="space-y-4">
+          {aboutSejarah.map((p, i) => (
+            <p key={i} className="text-[#8A8A96] leading-relaxed">{p}</p>
           ))}
         </div>
+        <div className="flex justify-center mt-10">
+          <img src="/pages/about-iso.png" alt="TÜV SÜD ISO 9001 certified" className="h-28 w-auto" />
+        </div>
       </section>
 
-      {/* Values */}
-      <section className="relative overflow-hidden" style={{ background: "#0C0C0E" }}>
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,168,76,0.04), transparent)" }} />
-        <div className="max-w-7xl mx-auto px-6 py-24 relative">
+      {/* Meet Our Team */}
+      <section className="relative overflow-hidden border-t border-white/5 py-20" style={{ background: "#0A0A0C" }}>
+        <div aria-hidden="true" className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,168,76,0.04), transparent 70%)" }} />
+        <div className="relative max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <p className="text-[#C9A84C] text-xs font-bold tracking-widest uppercase mb-2">Our Values</p>
-            <h2 className="text-3xl md:text-4xl font-black text-[#F0F0F2]">What Drives Us</h2>
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <div className="w-8 h-px bg-[#C9A84C]" />
+              <span className="text-[#C9A84C] text-xs font-bold tracking-[0.25em] uppercase">Our People</span>
+              <div className="w-8 h-px bg-[#C9A84C]" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-[#F0F0F2] tracking-tight">Meet Our Team</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
-            {values.map((v) => (
-              <div key={v.title} className="bg-[#0C0C0E] hover:bg-[#0F0F12] transition-colors p-8 group">
-                <div className="w-8 h-1 bg-[#C9A84C] mb-6 group-hover:w-12 transition-all duration-300" />
-                <h3 className="text-[#F0F0F2] text-xl font-black mb-3 group-hover:text-[#C9A84C] transition-colors">{v.title}</h3>
-                <p className="text-[#8A8A96] text-sm leading-relaxed">{v.desc}</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+            {team.map((m) => (
+              <div key={m.name} className="group bg-[#131316] border border-[#1E1E26] hover:border-[#C9A84C]/40 rounded-xl p-5 text-center transition-colors">
+                <div className="mx-auto mb-4 w-16 h-16 rounded-full flex items-center justify-center text-[#0C0C0E] font-black text-lg" style={{ background: "linear-gradient(135deg, #C9A84C, #B8963E)" }}>
+                  {initials(m.name)}
+                </div>
+                <h3 className="text-[#F0F0F2] font-bold text-sm leading-snug">{m.name}</h3>
+                <p className="text-[#8A8A96] text-xs mt-1.5 leading-snug">{m.role}</p>
               </div>
             ))}
           </div>

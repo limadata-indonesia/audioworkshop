@@ -30,7 +30,7 @@ export default function TestimonialCard({ t, hidden = false }) {
             <div className="w-8 h-8 rounded-full shrink-0 flex items-center justify-center text-[#C9A84C] font-black text-xs" style={{ background: "linear-gradient(135deg, #1A1710, #1E1E26)" }}>{t.name[0]}</div>
             <div>
               <p className="text-[#F0F0F2] text-sm font-bold leading-tight">{t.name}</p>
-              <p className="text-white/55 text-xs mt-0.5">{t.role} · {t.location}</p>
+              <p className="text-white/55 text-xs mt-0.5">{t.role}{t.location ? ` · ${t.location}` : ""}</p>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@ export default function TestimonialCard({ t, hidden = false }) {
         <div className="w-8 h-8 rounded-full shrink-0 flex items-center justify-center text-[#C9A84C] font-black text-xs" style={{ background: "linear-gradient(135deg, #1A1710, #1E1E26)" }}>{t.name[0]}</div>
         <div>
           <p className="text-[#F0F0F2] text-sm font-bold leading-tight">{t.name}</p>
-          <p className="text-[#4A4A56] text-xs mt-0.5">{t.role} · {t.location}</p>
+          <p className="text-[#4A4A56] text-xs mt-0.5">{t.role}{t.location ? ` · ${t.location}` : ""}</p>
         </div>
       </div>
     </div>
