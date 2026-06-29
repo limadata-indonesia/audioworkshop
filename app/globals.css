@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #0C0C0E;
+  color: #F0F0F2;
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0C0C0E; }
+::-webkit-scrollbar-thumb { background: #C9A84C; border-radius: 3px; }
+
+/* hide scrollbar utility (news / category rows) */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* brand logo marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.brand-track { animation: marquee 28s linear infinite; }
+.brand-marquee:hover .brand-track { animation-play-state: paused; }
+
+/* testimonial vertical marquee */
+@keyframes t-scroll-up   { from { transform: translateY(0); }    to { transform: translateY(-50%); } }
+@keyframes t-scroll-down { from { transform: translateY(-50%); } to { transform: translateY(0); } }
+.t-col-up   { animation: t-scroll-up   28s linear infinite; }
+.t-col-down { animation: t-scroll-down 24s linear infinite; }
+.t-col-up2  { animation: t-scroll-up   32s linear infinite; }
+.t-col-wrap:hover .t-col-up,
+.t-col-wrap:hover .t-col-down,
+.t-col-wrap:hover .t-col-up2 { animation-play-state: paused; }
