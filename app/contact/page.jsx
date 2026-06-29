@@ -2,10 +2,10 @@ import Link from "next/link";
 
 export const metadata = { title: "Contact — Audio Workshop Indonesia" };
 
-const phone = "+62 21 7211 234";
+const phone = "(021) 65309074";
 const email = "info@audioworkshop.co.id";
-const address = "Jl. Panglima Polim Raya No. 45, Kebayoran Baru, Jakarta Selatan";
-const whatsapp = "628111234567";
+const address = "Jalan Metro Indah Raya Blok A3 No. 12a-14, Perumahan Metro Sunter, Papanggo, Tanjung Priok, Jakarta Utara, DKI Jakarta 14340";
+const whatsapp = "6287781955523";
 const instagram = "https://instagram.com/audioworkshop.id";
 
 export default function Page({ searchParams }) {
