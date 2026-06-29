@@ -15,7 +15,7 @@ export default function Page() {
       </section>
 
       {/* Hero: full-bleed CAN image gradienting into the dark + founder letter */}
-      <section className="relative w-full overflow-hidden pt-6" style={{ background: "#0C0C0E" }}>
+      <section className="relative w-full overflow-hidden pt-6" style={{ background: "radial-gradient(ellipse 90% 80% at 75% 40%, rgba(201,168,76,0.08), transparent 58%), linear-gradient(155deg, #100D09 0%, #0C0C0E 55%, #0A0A0C 100%)" }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
           {/* Image */}
           <div className="relative min-h-[320px] lg:min-h-[560px]">
