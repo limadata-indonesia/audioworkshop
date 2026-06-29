@@ -49,7 +49,7 @@ export default function Page({ params }) {
       {items.length > 0 && (
         <section className="max-w-7xl mx-auto px-6 pb-24">
           <h2 className="text-2xl font-black text-[#F0F0F2] mb-8">{brand.name} Products</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
             {items.map((p) => (
               <Link key={p.slug} href={`/products/${p.slug}`} className="group bg-[#131316] border border-[#1E1E26] hover:border-[#C9A84C]/40 rounded-lg overflow-hidden transition-all hover:-translate-y-1">
                 <div className="aspect-square bg-white overflow-hidden">
@@ -61,8 +61,7 @@ export default function Page({ params }) {
                 </div>
                 <div className="p-4">
                   <span className="text-[#8A8A96] text-xs capitalize">{catLabel(p.category)}</span>
-                  <h3 className="text-[#F0F0F2] font-bold mt-1 group-hover:text-[#C9A84C] transition-colors">{p.name}</h3>
-                  {p.shortDesc && <p className="text-[#8A8A96] text-xs mt-1 line-clamp-2">{p.shortDesc}</p>}
+                  <h3 className="text-[#F0F0F2] text-xs font-bold leading-snug line-clamp-2 mt-1 group-hover:text-[#C9A84C] transition-colors">{p.name}</h3>
                 </div>
               </Link>
             ))}

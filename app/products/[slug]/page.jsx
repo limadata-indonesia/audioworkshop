@@ -94,7 +94,7 @@ export default function Page({ params }) {
         {related.length > 0 && (
           <div>
             <h2 className="text-xl font-black text-[#F0F0F2] mb-6">Related Products</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
               {related.map((p) => (
                 <Link
                   key={p.slug}
@@ -110,7 +110,7 @@ export default function Page({ params }) {
                   </div>
                   <div className="p-3">
                     <span className="text-[#C9A84C] text-xs font-bold">{getBrandName(p.brandSlug)}</span>
-                    <h3 className="text-[#F0F0F2] text-sm font-bold mt-0.5 group-hover:text-[#C9A84C] transition-colors line-clamp-2">
+                    <h3 className="text-[#F0F0F2] text-xs font-bold mt-0.5 group-hover:text-[#C9A84C] transition-colors line-clamp-2">
                       {p.name}
                     </h3>
                   </div>
