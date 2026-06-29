@@ -21,7 +21,7 @@ export default function Page({ params }) {
 
   return (
     <>
-      <section className="pt-32 max-w-3xl mx-auto px-6 pb-24">
+      <section className="pt-10 max-w-3xl mx-auto px-6 pb-24">
         <Link href="/news" className="text-[#8A8A96] hover:text-[#C9A84C] text-sm transition-colors mb-8 inline-block">← Back to News</Link>
 
         <div className="flex items-center gap-3 mb-4">

@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <>
       {/* Hero banner */}
-      <section className="relative pt-16">
+      <section className="relative pt-6">
         <div className="relative w-full overflow-hidden" style={{ aspectRatio: "16 / 7" }}>
           <img src="/pages/pci-banner.jpg" alt="Project car installation" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(12,12,14,0.35) 0%, transparent 35%, rgba(12,12,14,0.9) 100%)" }} />

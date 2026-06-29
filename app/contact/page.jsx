@@ -12,7 +12,7 @@ export default function Page({ searchParams }) {
   const sent = searchParams?.sent === "1";
   return (
     <>
-      <section className="pt-32 pb-16 max-w-7xl mx-auto px-6">
+      <section className="pt-10 pb-16 max-w-7xl mx-auto px-6">
         <p className="text-[#C9A84C] text-xs font-bold tracking-widest uppercase mb-2">Contact</p>
         <h1 className="text-3xl md:text-4xl font-black text-[#F0F0F2] mb-4">Get in Touch</h1>
         <p className="text-[#8A8A96] text-lg max-w-2xl">Ready to upgrade your car audio? Contact our experts for a free consultation and quote.</p>

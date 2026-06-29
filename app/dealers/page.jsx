@@ -15,7 +15,7 @@ export default function Page() {
 
   return (
     <>
-      <section className="pt-32 pb-6 max-w-7xl mx-auto px-6">
+      <section className="pt-10 pb-6 max-w-7xl mx-auto px-6">
         <p className="text-[#C9A84C] text-xs font-bold tracking-widest uppercase mb-2">Dealer Network</p>
         <h1 className="text-3xl md:text-4xl font-black text-[#F0F0F2] mb-4">Find a Dealer</h1>
         <p className="text-[#8A8A96] text-lg max-w-2xl mb-6">

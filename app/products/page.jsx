@@ -5,7 +5,7 @@ export const metadata = { title: "Products — Audio Workshop Indonesia" };
 export default function Page({ searchParams }) {
   return (
     <>
-      <section className="pt-32 pb-12 max-w-7xl mx-auto px-6">
+      <section className="pt-10 pb-12 max-w-7xl mx-auto px-6">
         <p className="text-[#C9A84C] text-xs font-bold tracking-widest uppercase mb-2">Catalog</p>
         <h1 className="text-3xl md:text-4xl font-black text-[#F0F0F2] mb-4">Product Catalog</h1>
         <p className="text-[#8A8A96] text-lg max-w-2xl">

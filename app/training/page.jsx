@@ -36,7 +36,7 @@ export default function Page() {
   return (
     <>
       {/* Top gallery */}
-      <section className="pt-16">
+      <section className="pt-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           {["tc-top1", "tc-top2", "tc-top3"].map((n) => (
             <div key={n} className="aspect-[4/3] overflow-hidden bg-[#131316]">

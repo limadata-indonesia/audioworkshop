@@ -18,7 +18,7 @@ export default function Page() {
         style={{ background: "linear-gradient(to right, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.35) 62%, transparent 75%)" }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-36 pb-28">
+      <div className="relative max-w-7xl mx-auto px-6 pt-10 pb-28">
         <div className="lg:max-w-[58%]">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-[#C9A84C]" />

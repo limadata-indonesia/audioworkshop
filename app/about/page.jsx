@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <>
       {/* Our Company — full-bleed image gradienting into the dark + text */}
-      <section className="relative w-full overflow-hidden pt-16" style={{ background: "#0C0C0E" }}>
+      <section className="relative w-full overflow-hidden pt-6" style={{ background: "#0C0C0E" }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
           {/* Image */}
           <div className="relative min-h-[340px] lg:min-h-[600px]">

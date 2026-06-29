@@ -6,7 +6,7 @@ export const metadata = { title: "Our Brands — Audio Workshop Indonesia" };
 export default function Page() {
   return (
     <>
-      <section className="relative overflow-hidden pt-32 pb-16" style={{ background: "#0C0C0E" }}>
+      <section className="relative overflow-hidden pt-10 pb-16" style={{ background: "#0C0C0E" }}>
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 80% 50%, rgba(201,168,76,0.05), transparent 70%)" }} />
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, rgba(201,168,76,0.2) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
         <div className="relative max-w-7xl mx-auto px-6">

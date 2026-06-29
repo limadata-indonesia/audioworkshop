@@ -20,7 +20,7 @@ export default function Page({ params }) {
 
   return (
     <>
-      <section className="pt-32 pb-0 max-w-7xl mx-auto px-6">
+      <section className="pt-10 pb-0 max-w-7xl mx-auto px-6">
         <Link href="/brands" className="text-[#8A8A96] hover:text-[#C9A84C] text-sm transition-colors mb-8 inline-block">← Back to Brands</Link>
 
         <div className="bg-[#131316] border border-[#1E1E26] rounded-xl overflow-hidden mb-16">

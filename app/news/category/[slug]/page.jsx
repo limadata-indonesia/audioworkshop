@@ -19,7 +19,7 @@ export default function Page({ params }) {
   const items = newsByCategory(cat);
 
   return (
-    <section className="pt-32 pb-24 max-w-7xl mx-auto px-6">
+    <section className="pt-10 pb-24 max-w-7xl mx-auto px-6">
       <Link href="/news" className="text-[#8A8A96] hover:text-[#C9A84C] text-sm transition-colors mb-8 inline-block">← Back to News</Link>
       <div className="flex items-center gap-3 mb-2">
         <div className="w-8 h-px bg-[#C9A84C]" />
