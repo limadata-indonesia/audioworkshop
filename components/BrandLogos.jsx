@@ -31,7 +31,7 @@ export default function BrandLogos() {
           <h2 className="text-3xl md:text-4xl font-black text-[#F0F0F2] tracking-tight">The Brands We Carry</h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-10">
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-5 sm:gap-x-8 gap-y-8 sm:gap-y-10">
           {LOGOS.map((l) => (
             <div key={l.name} title={l.name} className="flex items-center justify-center px-2 h-12 sm:h-14">
               <img
