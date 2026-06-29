@@ -206,7 +206,7 @@ export default function HomePage() {
         <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(201,168,76,0.2), transparent)" }} />
         <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-10 lg:gap-14 lg:items-center">
           {/* Title column */}
-          <div className="lg:shrink-0 lg:w-[32%]">
+          <div className="lg:shrink-0 lg:w-[38%]">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-6 h-px bg-[#C9A84C]" />
               <span className="text-[#C9A84C] text-[0.625rem] font-bold tracking-[0.2em] uppercase">News</span>
@@ -217,7 +217,7 @@ export default function HomePage() {
           </div>
           {/* Two-row scroll track */}
           <div className="lg:flex-1 w-full min-w-0">
-            <div className="no-scrollbar grid grid-flow-col grid-rows-2 gap-4 overflow-x-auto pb-2" style={{ gridAutoColumns: "minmax(220px, 1fr)", scrollSnapType: "x mandatory" }}>
+            <div className="no-scrollbar grid grid-flow-col grid-rows-2 lg:grid-rows-1 gap-4 lg:gap-5 overflow-x-auto pb-2" style={{ gridAutoColumns: "minmax(220px, 1fr)", scrollSnapType: "x mandatory" }}>
               {news.slice(0, 8).map((n) => (
                 <Link key={n.slug} href={`/news/${n.slug}`} className="group flex flex-col overflow-hidden border border-white/5 hover:border-[#C9A84C]/25 transition-colors duration-300 no-underline text-[#F0F0F2]" style={{ scrollSnapAlign: "start" }}>
                   <div className="aspect-video overflow-hidden relative" style={{ background: "linear-gradient(135deg, #111114, #0E0E10)" }}>
