@@ -105,9 +105,9 @@ export default function HomePage() {
               <p className="text-[#8A8A96]">From Entry Level to High-End — We&apos;ve Got You Covered!</p>
               <p className="text-[#8A8A96]">Drive with Superior Sound.</p>
             </div>
-            <div className="flex flex-wrap items-center gap-4 mb-8">
-              <Link href="/products" className="bg-[#C9A84C] hover:bg-[#B8963E] text-[#0C0C0E] font-bold px-8 py-3.5 text-xs tracking-[0.2em] uppercase transition-colors">Upgrade Now</Link>
-              <Link href="/brands" className="border border-white/20 hover:border-[#C9A84C]/60 text-[#F0F0F2] font-semibold px-8 py-3.5 text-xs tracking-[0.2em] uppercase transition-colors">View Brands</Link>
+            <div className="flex items-center gap-3 mb-8">
+              <Link href="/products" className="flex-1 sm:flex-none text-center bg-[#C9A84C] hover:bg-[#B8963E] text-[#0C0C0E] font-bold px-6 sm:px-8 py-3.5 text-xs tracking-[0.2em] uppercase transition-colors">Upgrade Now</Link>
+              <Link href="/brands" className="flex-1 sm:flex-none text-center border border-white/20 hover:border-[#C9A84C]/60 text-[#F0F0F2] font-semibold px-6 sm:px-8 py-3.5 text-xs tracking-[0.2em] uppercase transition-colors">View Brands</Link>
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-[#6A6A76] text-xs tracking-wide">
               <span>audioworkshop.co.id</span>
@@ -204,22 +204,22 @@ export default function HomePage() {
       {/* NEWS SLIDER */}
       <section className="relative py-20 overflow-hidden" style={{ background: "#0C0C0E" }}>
         <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(201,168,76,0.2), transparent)" }} />
-        <div className="max-w-7xl mx-auto px-6 flex gap-10 md:gap-14 items-center">
-          {/* Left: title column */}
-          <div className="shrink-0 w-1/3 md:w-[38%]">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-10 lg:gap-14 lg:items-center">
+          {/* Title column */}
+          <div className="lg:shrink-0 lg:w-[32%]">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-6 h-px bg-[#C9A84C]" />
               <span className="text-[#C9A84C] text-[0.625rem] font-bold tracking-[0.2em] uppercase">News</span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-black text-[#F0F0F2] leading-tight tracking-tight mb-4 whitespace-nowrap">Latest News</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-[#F0F0F2] leading-tight tracking-tight mb-4">Latest News</h2>
             <p className="text-[#6A6A76] text-sm leading-relaxed mb-6">Stay up to date with the latest from Audio Workshop — new product arrivals, exclusive brand launches, installation spotlights, and industry events across Indonesia.</p>
             <Link href="/news" className="text-[#C9A84C] text-xs font-bold tracking-widest uppercase hover:underline">All News →</Link>
           </div>
-          {/* Right: scroll track */}
-          <div className="flex-1 min-w-0 overflow-hidden">
-            <div className="no-scrollbar flex gap-5 overflow-x-auto" style={{ scrollSnapType: "x mandatory", paddingRight: "3rem" }}>
+          {/* Two-row scroll track */}
+          <div className="lg:flex-1 w-full min-w-0">
+            <div className="no-scrollbar grid grid-flow-col grid-rows-2 gap-4 overflow-x-auto pb-2" style={{ gridAutoColumns: "minmax(220px, 1fr)", scrollSnapType: "x mandatory" }}>
               {news.slice(0, 8).map((n) => (
-                <Link key={n.slug} href={`/news/${n.slug}`} className="group flex flex-col shrink-0 overflow-hidden border border-white/5 hover:border-[#C9A84C]/25 transition-colors duration-300 no-underline text-[#F0F0F2]" style={{ width: "calc((100% - 2 * 1.25rem) / 2.5)", scrollSnapAlign: "start", minWidth: 240 }}>
+                <Link key={n.slug} href={`/news/${n.slug}`} className="group flex flex-col overflow-hidden border border-white/5 hover:border-[#C9A84C]/25 transition-colors duration-300 no-underline text-[#F0F0F2]" style={{ scrollSnapAlign: "start" }}>
                   <div className="aspect-video overflow-hidden relative" style={{ background: "linear-gradient(135deg, #111114, #0E0E10)" }}>
                     {n.image ? (
                       <img src={n.image} alt={n.title} loading="lazy" className="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
@@ -298,7 +298,7 @@ export default function HomePage() {
                 {testimonials[0].map((t, i) => <TestimonialCard key={`b${i}`} t={t} hidden />)}
               </div>
             </div>
-            <div className="t-col-wrap flex-1 min-w-0 overflow-hidden">
+            <div className="t-col-wrap hidden md:block flex-1 min-w-0 overflow-hidden">
               <div className="t-col-down flex flex-col gap-4">
                 {testimonials[1].map((t, i) => <TestimonialCard key={`a${i}`} t={t} />)}
                 {testimonials[1].map((t, i) => <TestimonialCard key={`b${i}`} t={t} hidden />)}
