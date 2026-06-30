@@ -40,7 +40,7 @@ export default function Page() {
               href="https://caraudio.network/#/home/all"
               target="_blank"
               rel="noopener"
-              className="self-start mt-8 rounded-full border border-white/30 hover:border-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#0C0C0E] text-[#F0F0F2] text-sm font-bold px-8 py-3.5 transition-all"
+              className="block w-fit mt-8 rounded-full border border-white/30 hover:border-[#C9A84C] hover:bg-[#C9A84C] hover:text-[#0C0C0E] text-[#F0F0F2] text-sm font-bold px-8 py-3.5 transition-all"
             >
               Car Audio Network
             </a>
